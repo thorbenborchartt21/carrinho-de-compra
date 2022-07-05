@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de compras</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    
+    <script src="script.js"></script>
+    
+    <style>
+        #carrinhoDeCompras:empty::before {
+            content: 'Nenhum item adicionado ao carrinho';
+            padding: 13px;
+            color: gray;
+            font-size: 14px;
+        }
+        #listaDeProdutos {
+            background: #f7f7f7;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="card my-5">
+            <div class="card-header text-center">
+                Itens no carrinho
+            </div>
+            <ul id="carrinhoDeCompras" class="list-group list-group-flush"></ul>
+            <div class="card-footer text-end">
+                Total R$ <label id="totalDoCarrinho">0.00</label>
+            </div>
+        </div>
+    
+        <div id="listaDeProdutos" class="d-flex justify-content-around p-5">
+            <!-- Moletom -->
+            <div class="card" style="width: 18rem;">
+                <img src="moletom.webp"
+                     class="card-img-top"
+                     style="height: 250px; width: auto; margin: auto;"
+                     alt="Moletom masculino"
+                >
+                <div class="card-body border-top">
+                    <h5 class="card-title">R$ 149.90</h5>
+                    <p class="card-text">
+                        Moletom masculino
+                    </p>
+                    <a
+                        class="btn btn-primary float-end"
+                        data-nome-do-produto="Moletom"
+                        data-preco-do-produto="149.90"
+                        onclick="adicionarAoCarrinho(event)"
+                    >
+                        Adicionar ao carrinho
+                    </a>
+                </div>
+            </div>
+            <!-- Jaqueta -->
+            <div class="card" style="width: 18rem;">
+                <img src="jaqueta.jpg"
+                     class="card-img-top"
+                     style="height: 250px; width: auto; margin: auto;"
+                     alt="Moletom masculino"
+                >
+                <div class="card-body border-top">
+                    <h5 class="card-title">R$ 199,90</h5>
+                    <p class="card-text">Jaqueta masculina com capuz</p>
+                    <a
+                        class="btn btn-primary float-end"
+                        data-nome-do-produto="Jaqueta"
+                        data-preco-do-produto="199.90"
+                        onclick="adicionarAoCarrinho(event)"
+                    >
+                        Adicionar ao carrinho
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
